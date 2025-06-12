@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #fffefc;
+    color: #333;
+  }
+  
+  /* ===== HEADER ===== */
+  header {
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #facc15;
+    text-decoration: none;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #f4f4f4;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #facc15;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-btn {
+    background-color: #facc15;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .order-btn:hover {
+    background-color: #eab308;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1606755962773-73e23f7a3b27');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: #1a1a1a;
+    color: #fef9c3;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .footer-container a {
+    color: #facc15;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-container a:hover {
+    text-decoration: underline;
+  }
+  
+  .hours p {
+    margin: 4px 0;
+  }
+  
+  /* ===== HAMBURGER MENU (MOBILE) ===== */
+  .menu-toggle {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+    }
+  
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #1a1a1a;
+      margin-top: 10px;
+    }
+  
+    nav a {
+      padding: 10px 0;
+      width: 100%;
+      border-top: 1px solid #333;
+      text-align: left;
+      padding-left: 20px;
+    }
+  
+    .nav-right {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: #facc15;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  
+    nav.active,
+    .nav-right.active {
+      display: flex;
+    }
+  
+    .hero h1 {
+      font-size: 2em;
+    }
+  
+    .hero p {
+      font-size: 1em;
+    }
+  }
