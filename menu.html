@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Feane | Menu</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styling.css" />
+
   <style>
     .menu-grid {
       display: grid;
@@ -43,7 +44,7 @@
 </head>
 <body>
 
-
+  <!--Header -->
   <header>
     <a href="#" class="logo">Feane</a>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -58,36 +59,53 @@
     </div>
   </header>
 
-  <!-- Menu Section -->
-  <h1 style="text-align:center; margin-top: 40px;">Our Menu</h1>
+  <!-- Menu -->
+  <h1 style="text-align:center; margin-top: 40px;">Menu</h1>
   <div class="menu-grid">
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1606755962773-73e23f7a3b27" alt="Burger">
+      <img src="https://media.istockphoto.com/id/520215281/photo/bacon-burger.jpg?s=1024x1024&w=is&k=20&c=CDNBvZDZTJl5EwRO5xQZ_UOZ_KUUy5e7aVFE7bjz2ME=">
       <h3>Classic Cheeseburger</h3>
       <p>Juicy beef patty with cheddar, lettuce, tomato & house sauce</p>
-      <div class="price">$8.99</div>
+      <div class="price">$8.80</div>
     </div>
+
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Fries">
+      <img src="https://media.istockphoto.com/id/614420426/photo/basket-of-french-fries.jpg?s=1024x1024&w=is&k=20&c=4BHF9NeQ2F_yj8eKpWVk4HmvB0KZjhlNUOfXFPn6pLg=" alt="Fries">
       <h3>Golden Fries</h3>
       <p>Crispy seasoned fries, perfect with any meal</p>
-      <div class="price">$3.49</div>
+      <div class="price">$3.75</div>
     </div>
+
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Chicken Sandwich">
+      <img src="https://media.istockphoto.com/id/1400488896/photo/spicy-country-fried-chicken-sandwich-on-a-white-background.jpg?s=1024x1024&w=is&k=20&c=pXh75j-QHlU4rprZhtAtfKXnRPxK8Ta2Nd31LuYk358=" alt="Chicken Sandwich">
       <h3>Spicy Chicken Sandwich</h3>
       <p>Fried chicken breast with spicy mayo and pickles</p>
-      <div class="price">$7.99</div>
+      <div class="price">$8.55</div>
     </div>
+
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1613145993481-73d9cd3c79e1" alt="Milkshake">
-      <h3>Chocolate Milkshake</h3>
+      <img src="https://media.istockphoto.com/id/1338229031/photo/two-chocolate-milkshakes-on-a-wooden-table.jpg?s=1024x1024&w=is&k=20&c=7fnUGlIfTiYfeDO_MyZhEjMsScGAZe1KTfbLD3kR7wk=" alt="Milkshake">
+      <h3>Classic Milkshake</h3>
       <p>Thick and creamy milkshake topped with whipped cream</p>
-      <div class="price">$4.50</div>
+      <div class="price">$6.35</div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1703219339041-47adc8188c51?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mushroom Burger">
+      <h3>Mushroom Burger</h3>
+      <p>Grilled patty topped with sautéed mushrooms, Swiss cheese, and garlic aioli</p>
+      <div class="price">$9.15</div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1703219339041-47adc8188c51?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chicken Nuggets">
+      <h3>Chicken Nuggets</h3>
+      <p>10 crispy chicken nuggets served with your choice of dipping sauce</p>
+      <div class="price">$5.80</div>
     </div>
   </div>
 
-  <!-- Footer -->
+ <!---footer-->
   <footer>
     <div class="footer-container">
       <div class="social">
@@ -96,15 +114,14 @@
         <a href="#">Twitter</a>
       </div>
       <div class="hours">
-        <p><strong>Business Hours</strong></p>
-        <p>Mon–Fri: 11:00 AM – 9:00 PM</p>
-        <p>Sat–Sun: 12:00 PM – 10:00 PM</p>
+        <p><strong>Opening Hours</strong></p>
+        <p>Everyday</p>
+        <p>9:00 AM – 10:00 PM</p>
       </div>
-      <p>© 2025 Feane</p>
+      <p>© Feane25</p>
     </div>
   </footer>
 
-  <!-- Mobile Nav Script -->
   <script>
     function toggleMenu() {
       document.getElementById('mainNav').classList.toggle('active');
