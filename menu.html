@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feane | Menu</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .menu-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu-item img {
+      max-width: 100%;
+      border-radius: 12px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .menu-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #f59e0b;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <a href="#" class="logo">Feane</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="mainNav">
+      <a href="setup.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-right" id="navRight">
+      <button class="order-btn">Order Online</button>
+    </div>
+  </header>
+
+  <!-- Menu Section -->
+  <h1 style="text-align:center; margin-top: 40px;">Our Menu</h1>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1606755962773-73e23f7a3b27" alt="Burger">
+      <h3>Classic Cheeseburger</h3>
+      <p>Juicy beef patty with cheddar, lettuce, tomato & house sauce</p>
+      <div class="price">$8.99</div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Fries">
+      <h3>Golden Fries</h3>
+      <p>Crispy seasoned fries, perfect with any meal</p>
+      <div class="price">$3.49</div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Chicken Sandwich">
+      <h3>Spicy Chicken Sandwich</h3>
+      <p>Fried chicken breast with spicy mayo and pickles</p>
+      <div class="price">$7.99</div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1613145993481-73d9cd3c79e1" alt="Milkshake">
+      <h3>Chocolate Milkshake</h3>
+      <p>Thick and creamy milkshake topped with whipped cream</p>
+      <div class="price">$4.50</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="social">
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+      </div>
+      <div class="hours">
+        <p><strong>Business Hours</strong></p>
+        <p>Mon–Fri: 11:00 AM – 9:00 PM</p>
+        <p>Sat–Sun: 12:00 PM – 10:00 PM</p>
+      </div>
+      <p>© 2025 Feane</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+      document.getElementById('navRight').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
