@@ -10,7 +10,7 @@
     color: #333;
   }
   
-  /* ===== HEADER ===== */
+  /*header*/
   header {
     background-color: #1a1a1a;
     padding: 20px 40px;
@@ -59,7 +59,7 @@
     background-color: #eab308;
   }
   
-  /* ===== HERO SECTION ===== */
+  /*hero */
   .hero {
     background-image: url('https://images.unsplash.com/photo-1606755962773-73e23f7a3b27');
     background-size: cover;
@@ -89,7 +89,7 @@
     margin-bottom: 20px;
   }
   
-  /* ===== FOOTER ===== */
+  /*footer*/
   footer {
     background-color: #1a1a1a;
     color: #fef9c3;
@@ -112,7 +112,7 @@
     margin: 4px 0;
   }
   
-  /* ===== HAMBURGER MENU (MOBILE) ===== */
+  /*mobile menu */
   .menu-toggle {
     display: none;
   }
