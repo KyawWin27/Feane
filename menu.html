@@ -40,11 +40,78 @@
       font-weight: bold;
       color: #f59e0b;
     }
+
+    .menu-item button {
+      margin-top: 10px;
+      background-color: #facc15;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .menu-item button:hover {
+      background-color: #eab308;
+    }
+
+    .cart-icon {
+      margin-left: 20px;
+      cursor: pointer;
+      position: relative;
+      font-size: 1.2em;
+      color: #facc15;
+    }
+
+    #cart-count {
+      background: #f87171;
+      color: #fff;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.8em;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+
+    #cart-panel {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 80px;
+      width: 300px;
+      background: #fef9c3;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    #cart-panel h3 {
+      margin-top: 0;
+    }
+
+    #cart-panel p {
+      margin: 5px 0;
+    }
+
+    #cart-panel button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #f87171;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #cart-panel button:hover {
+      background: #ef4444;
+    }
   </style>
 </head>
 <body>
-
-  <!--Header -->
   <header>
     <a href="#" class="logo">Feane</a>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -56,56 +123,75 @@
     </nav>
     <div class="nav-right" id="navRight">
       <button class="order-btn">Order Online</button>
+      <div class="cart-icon" onclick="toggleCartPanel()">
+        🛒 <span id="cart-count">0</span>
+      </div>
     </div>
   </header>
 
-  <!-- Menu -->
-  <h1 style="text-align:center; margin-top: 40px;">Menu</h1>
+  <!--Cart Panel-->
+  <div id="cart-panel">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+    <button onclick="clearCart()">Clear Cart</button>
+  </div>
+
+  <!--Menu Section-->
+  <h1 style="text-align:center; margin-top: 40px;">Our Menu</h1>
   <div class="menu-grid">
+
     <div class="menu-item">
-      <img src="https://media.istockphoto.com/id/520215281/photo/bacon-burger.jpg?s=1024x1024&w=is&k=20&c=CDNBvZDZTJl5EwRO5xQZ_UOZ_KUUy5e7aVFE7bjz2ME=">
+      <img src="https://media.istockphoto.com/id/520215281/photo/bacon-burger.jpg?s=1024x1024&w=is&k=20&c=CDNBvZDZTJl5EwRO5xQZ_UOZ_KUUy5e7aVFE7bjz2ME=" alt="Burger">
       <h3>Classic Cheeseburger</h3>
       <p>Juicy beef patty with cheddar, lettuce, tomato & house sauce</p>
-      <div class="price">$8.80</div>
+      <div class="price">$8.99</div>
+      <button onclick="addToCart('Classic Cheeseburger', 8.99)">Add to Cart</button>
     </div>
 
     <div class="menu-item">
       <img src="https://media.istockphoto.com/id/614420426/photo/basket-of-french-fries.jpg?s=1024x1024&w=is&k=20&c=4BHF9NeQ2F_yj8eKpWVk4HmvB0KZjhlNUOfXFPn6pLg=" alt="Fries">
       <h3>Golden Fries</h3>
       <p>Crispy seasoned fries, perfect with any meal</p>
-      <div class="price">$3.75</div>
+      <div class="price">$3.49</div>
+      <button onclick="addToCart('Golden Fries', 3.49)">Add to Cart</button>
     </div>
 
     <div class="menu-item">
       <img src="https://media.istockphoto.com/id/1400488896/photo/spicy-country-fried-chicken-sandwich-on-a-white-background.jpg?s=1024x1024&w=is&k=20&c=pXh75j-QHlU4rprZhtAtfKXnRPxK8Ta2Nd31LuYk358=" alt="Chicken Sandwich">
       <h3>Spicy Chicken Sandwich</h3>
       <p>Fried chicken breast with spicy mayo and pickles</p>
-      <div class="price">$8.55</div>
+      <div class="price">$7.99</div>
+      <button onclick="addToCart('Spicy Chicken Sandwich', 7.99)">Add to Cart</button>
     </div>
 
     <div class="menu-item">
       <img src="https://media.istockphoto.com/id/1338229031/photo/two-chocolate-milkshakes-on-a-wooden-table.jpg?s=1024x1024&w=is&k=20&c=7fnUGlIfTiYfeDO_MyZhEjMsScGAZe1KTfbLD3kR7wk=" alt="Milkshake">
-      <h3>Classic Milkshake</h3>
+      <h3>Chocolate Milkshake</h3>
       <p>Thick and creamy milkshake topped with whipped cream</p>
-      <div class="price">$6.35</div>
+      <div class="price">$4.50</div>
+      <button onclick="addToCart('Chocolate Milkshake', 4.50)">Add to Cart</button>
     </div>
 
     <div class="menu-item">
       <img src="https://images.unsplash.com/photo-1703219339041-47adc8188c51?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mushroom Burger">
       <h3>Mushroom Burger</h3>
       <p>Grilled patty topped with sautéed mushrooms, Swiss cheese, and garlic aioli</p>
-      <div class="price">$9.15</div>
+      <div class="price">$9.25</div>
+      <button onclick="addToCart('Mushroom Burger', 9.25)">Add to Cart</button>
     </div>
 
     <div class="menu-item">
       <img src="https://images.unsplash.com/photo-1703219339041-47adc8188c51?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chicken Nuggets">
       <h3>Chicken Nuggets</h3>
       <p>10 crispy chicken nuggets served with your choice of dipping sauce</p>
-      <div class="price">$5.80</div>
+      <div class="price">$5.99</div>
+      <button onclick="addToCart('Chicken Nuggets', 5.99)">Add to Cart</button>
     </div>
+
   </div>
 
- <!---footer-->
+  <!--Footer-->
   <footer>
     <div class="footer-container">
       <div class="social">
@@ -114,15 +200,60 @@
         <a href="#">Twitter</a>
       </div>
       <div class="hours">
-        <p><strong>Opening Hours</strong></p>
-        <p>Everyday</p>
-        <p>9:00 AM – 10:00 PM</p>
+        <p><strong>Business Hours</strong></p>
+        <p>Mon–Fri: 11:00 AM – 9:00 PM</p>
+        <p>Sat–Sun: 12:00 PM – 10:00 PM</p>
       </div>
-      <p>©Feane25</p>
+      <p>© Feane25</p>
     </div>
   </footer>
 
+  <!--Javascript for functionality-->
   <script>
+    const cart = [];
+
+    function addToCart(itemName, price) {
+      const existingItem = cart.find(item => item.name === itemName);
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({ name: itemName, price: price, qty: 1 });
+      }
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function clearCart() {
+      cart.length = 0;
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      cartItemsDiv.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        cartItemsDiv.innerHTML += `
+          <p>
+            ${item.name} ($${item.price.toFixed(2)}) x ${item.qty}
+            <button onclick="removeItem(${index})">Remove</button>
+          </p>
+        `;
+      });
+      document.getElementById('cart-total').innerText = total.toFixed(2);
+      document.getElementById('cart-count').innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+    }
+
+    function toggleCartPanel() {
+      const panel = document.getElementById('cart-panel');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    }
+
     function toggleMenu() {
       document.getElementById('mainNav').classList.toggle('active');
       document.getElementById('navRight').classList.toggle('active');
